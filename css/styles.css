@@ -1,0 +1,54 @@
+body {
+    background-color: gray;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.menu > span {
+    background-color: darkred;
+    padding: 5em;
+    margin: 0;
+}
+
+.menu > span > a {
+    color: black;
+}
+
+
+h1 {
+    color: darkred;
+    text-align: center;
+}
+
+.window {
+    background-color: darkred;
+    color: black;
+    width: 16%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: darkred;
+    color: black;
+    border: 0px;
+    padding: 10px;
+}

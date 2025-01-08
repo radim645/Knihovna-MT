@@ -16,11 +16,15 @@ $result = $conn->query($query);
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+<?php
+require_once "layout/header.php";
+?>
+
+
 <h1>KNIHOVNA</h1>
 
-<header>
-    <a href="login.html">Přihlášení</a>
-</header>
+
 
 <main>
     <div class="window">
@@ -48,7 +52,9 @@ $result = $conn->query($query);
 </main>
 
 
-
+<?php
+require_once "layout/footer.php";
+?>
 
 
     
