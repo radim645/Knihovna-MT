@@ -26,7 +26,7 @@ require_once "layout/header.php";
 
 
 
-<main>
+
     <div class="window">
         <h2>Kniha 1</h2>
     </div>
@@ -49,7 +49,6 @@ require_once "layout/header.php";
 
 
 
-</main>
 
 
 <?php
