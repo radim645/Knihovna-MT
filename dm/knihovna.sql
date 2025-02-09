@@ -1,16 +1,20 @@
 CREATE DATABASE knihovna;
 
+
 USE knihovna;
 
-CREATE TABLE uzivatele (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+
+CREATE TABLE IF NOT EXISTS uzivatele (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     jmeno VARCHAR(100) NOT NULL,
     prijmeni VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     adresa VARCHAR(255) NOT NULL,
     uzivatelske_jmeno VARCHAR(50) UNIQUE NOT NULL,
-    heslo VARCHAR(255) NOT NULL
-);
+    heslo VARCHAR(100) NOT NULL,
+    role ENUM('customer','admin') DEFAULT 'customer' NOT NULL
+)
+ENGINE = InnoDB;
 
 
 CREATE TABLE knihy (
@@ -22,7 +26,8 @@ CREATE TABLE knihy (
     nakladatelstvi VARCHAR(200) NOT NULL,
     pocet_kusu INT DEFAULT 5,
     dostupnost BOOLEAN DEFAULT TRUE
-);
+)
+ENGINE = InnoDB;
 
 
 CREATE TABLE vypujcky (
@@ -33,18 +38,21 @@ CREATE TABLE vypujcky (
     datum_vraceni DATETIME,
     FOREIGN KEY (id_knihy) REFERENCES knihy(id),
     FOREIGN KEY (id_uzivatele) REFERENCES uzivatele(id)
-);
+)
+ENGINE = InnoDB;
 
 
 CREATE TABLE rezervace (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     id_knihy INT NOT NULL,
     id_uzivatele INT NOT NULL,
     datum_rezervace DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     platnost_do DATETIME NOT NULL,
     FOREIGN KEY (id_knihy) REFERENCES knihy(id),
     FOREIGN KEY (id_uzivatele) REFERENCES uzivatele(id)
-);
+)
+ENGINE = InnoDB;
+
 
 
 INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, pocet_kusu) VALUES
@@ -53,3 +61,6 @@ INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, poce
 ('Kniha 3', 'Autor 3', '2018-11-10', 400, 'Nakladatelství 3', 5),
 ('Kniha 4', 'Autor 4', '2021-03-20', 150, 'Nakladatelství 4', 5),
 ('Kniha 5', 'Autor 5', '2022-08-25', 250, 'Nakladatelství 5', 5);
+
+INSERT INTO uzivatele (jmeno, prijmeni, email, heslo, role)
+VALUES ('Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin');
