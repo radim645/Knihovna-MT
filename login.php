@@ -17,7 +17,7 @@ require 'db.php';
 require_once "layout/header.php";
 ?>
 
-<main>
+
 
 
 <h1>Prihlaseni</h1>
@@ -38,7 +38,51 @@ require_once "layout/header.php";
 <p>Nemate ucet?" " <a href="reg.php">Registrujte se zde</a></p>
 
 
-</main>
+<?php
+
+
+$logged=0;
+$invalid=0;
+
+if(isset($_POST['login'])){
+
+    $username = mysqli_real_escape_string($con, $_POST['username']); 
+    $password = md5(mysqli_real_escape_string($con, $_POST['password'])); 
+
+    $sql="select id, name, surname, email from `users` where username='$username' and password='$password'";
+
+    $sqlstat=mysqli_query($con,$sql);
+    if($sqlstat) {
+        $num=mysqli_num_rows($sqlstat);
+        if($num>0) {
+            $logged=1;
+            session_start();
+            $row = mysqli_fetch_assoc($sqlstat); 
+
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['surname'] = $row['surname'];
+            $_SESSION['email'] = $row['email']; 
+            $_SESSION['logged_id'] = true;
+
+            header('location:index.php');
+
+        } else {
+            $invalid=1;      
+        }
+    }
+}
+
+?>
+
+<?php
+
+if($invalid){
+    echo '<script>alert("Špatně zadané heslo nebo přihlašovací jméno")</script>';
+}
+
+?>
+
 
 <?php
 require_once "layout/footer.php";
