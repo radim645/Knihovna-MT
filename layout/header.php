@@ -8,13 +8,20 @@
 </head>
 <body>
     
-<div class="menu">
-<span><a href="index.php">Knihovna</a></span>
-<span><a href="login.php">Přihlášení</a></span>
-<span><a href="reg.php">Registrace</a></span>
-<span><a href="borrow.php">Moje výpujčky</a></span>
-<span><a href="admin.php">Zápujčky</a></span>
-<span><a href="logout.php">Odhlásit se</a></span>
+<nav class="menu">
+
+<ul>
+
+<span><li><a href="index.php">Knihovna</a></li></span>
+<span><li><a href="login.php">Přihlášení</a></li></span>
+<span><li><a href="reg.php">Registrace</a></li></span>
+<span><li><a href="borrow.php">Moje výpujčky</a></li></span>
+<span><li><a href="admin.php">Zápujčky</a></li></span>
+<span><li><a href="logout.php">Odhlásit se</a></li></span>
+
+</ul>
+
+</nav>
 
 </body>
 </html>
