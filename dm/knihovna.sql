@@ -64,3 +64,4 @@ INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, poce
 
 INSERT INTO uzivatele (jmeno, prijmeni, email, heslo, role)
 VALUES ('Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin');
+
