@@ -56,11 +56,11 @@ ENGINE = InnoDB;
 
 
 INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, pocet_kusu) VALUES
-('Kniha 1', 'Autor 1', '2020-01-01', 300, 'Nakladatelství 1', 5),
-('Kniha 2', 'Autor 2', '2019-06-15', 200, 'Nakladatelství 2', 5),
-('Kniha 3', 'Autor 3', '2018-11-10', 400, 'Nakladatelství 3', 5),
-('Kniha 4', 'Autor 4', '2021-03-20', 150, 'Nakladatelství 4', 5),
-('Kniha 5', 'Autor 5', '2022-08-25', 250, 'Nakladatelství 5', 5);
+('1984', 'George Orwell', '1949', '328', 'Secker & Warburg', 5),
+('Malý princ', 'Antoine de Saint-Exupéry', '1943', '96', 'Reynal & Hitchcock', 5),
+('Sto roků samoty', 'Gabriel García Márquez', '1967', '417', 'Editorial Sudamericana', 5),
+('Sapiens: Úchvatný i úděsný příběh lidstva', 'Yuval Noah Harari', '2011', '443', 'Harvill Secker', 5),
+('Pýcha a předsudek', 'Jane Austen', '1813', '432', 'T. Egerton', 5);
 
 INSERT INTO uzivatele (jmeno, prijmeni, email, heslo, role)
 VALUES ('Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin');
