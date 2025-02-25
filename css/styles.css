@@ -32,33 +32,23 @@ body {
 }
 
 
-h1 {
-    color: darkred;
-    text-align: center;
-}
-
-
-
 form {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    margin-bottom: 10px;
+.knihy_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: auto;
+    padding: 15px;
 }
 
-input {
-    margin-bottom: 10px;
-}
-
-button {
-    margin-bottom: 10px;
-}
-
-button {
+.knihy {
     background-color: darkred;
-    color: black;
-    border: 0px;
-    padding: 10px;
+    border: 2px black;
+    border-radius: 5px;
+    text-align: left;
+    padding: 15px;
 }
