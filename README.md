@@ -3,7 +3,9 @@
 
  NÁVOD K POUŽITÍ
 
--V datovém modelu vytvořte schéma, všechny tabulky
+-V datovém modelu vytvořte schéma knihovna, všechny tabulky
+
+-Spustte script Knihovna-MT
 
 -Na webu klikněte v navigačním menu na přihlásit se. Buď se přihlásíte jako admin (user_name: radim, password: 12345) a nebo se zaregistrujte
 
