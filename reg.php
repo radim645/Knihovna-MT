@@ -60,15 +60,15 @@ $user=0;
 $success=0;
 
 if(isset($_POST['registrace'])){
-    $name=mysqli_real_escape_string($con,$_POST['name']);
-    $surname=mysqli_real_escape_string($con,$_POST['surname']);
-    $email=mysqli_real_escape_string($con,$_POST['email']);
-    $password=mysqli_real_escape_string($con,$_POST['password']);
+    $name=mysqli_real_escape_string($conn,$_POST['name']);
+    $surname=mysqli_real_escape_string($conn,$_POST['surname']);
+    $email=mysqli_real_escape_string($conn,$_POST['email']);
+    $password=mysqli_real_escape_string($conn,$_POST['password']);
 
 
 $sql="select * from `users` where email='$email'";
 
-$sqlstat=mysqli_query($con,$sql);
+$sqlstat=mysqli_query($conn,$sql);
 if($sqlstat) {
     $num=mysqli_num_rows($sqlstat);
     if($num>0) {
@@ -76,12 +76,12 @@ if($sqlstat) {
     } else {
         $sql="insert into `users` (name, surname, email, password)
               values ('$name', '$surname', '$email', md5('$password'))";
-        $sqlstat=mysqli_query($con,$sql);
+        $sqlstat=mysqli_query($conn,$sql);
         if($sqlstat) {
             $success=1;
             
         } else {
-            die(mysqli_error($con));
+            die(mysqli_error($conn));
         }      
     }
 }

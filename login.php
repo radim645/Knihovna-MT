@@ -47,12 +47,12 @@ $invalid=0;
 
 if(isset($_POST['login'])){
 
-    $username = mysqli_real_escape_string($con, $_POST['username']); 
-    $password = md5(mysqli_real_escape_string($con, $_POST['password'])); 
+    $username = mysqli_real_escape_string($conn, $_POST['username']); 
+    $password = md5(mysqli_real_escape_string($conn, $_POST['password'])); 
 
     $sql="select id, name, surname, email from `users` where username='$username' and password='$password'";
 
-    $sqlstat=mysqli_query($con,$sql);
+    $sqlstat=mysqli_query($conn,$sql);
     if($sqlstat) {
         $num=mysqli_num_rows($sqlstat);
         if($num>0) {
