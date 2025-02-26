@@ -18,12 +18,12 @@ require_once "layout/header.php";
 ?>
 
 
+<div class="container">
 
-
-<h1>Prihlaseni</h1>
+<h3>Přihlášení</h3>
 
 <form method="POST">
-    <label for="username">Prihlasovaci jmeno:</label>
+    <label for="username">Přihlašovací jméno:</label>
     <input type="text" id="username" required>
     </br>
 
@@ -31,12 +31,13 @@ require_once "layout/header.php";
     <input type="password" id="password" required>
     </br>
 
-    <button type="submit">Prihlasit se</button>
+    <input type="submit" value="Přihlásit se">
 
     </form>
 
 <p>Nemate ucet?" " <a href="reg.php">Registrujte se zde</a></p>
 
+</div>
 
 <?php
 

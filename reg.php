@@ -17,9 +17,9 @@ require 'db.php';
 require_once "layout/header.php";
 ?>
 
+<div class="container">
 
-
-<h1>Registrace</h1>
+<h3>Registrace</h3>
 
 
 
@@ -49,9 +49,11 @@ require_once "layout/header.php";
     <input type="password" name="password"  required>
     </br>  
 
-    <button type="submit" name="registrace">Registrovat</button>
+    <input type="submit" value="Registrovat">
 
 </form>
+
+</div>
 
 <?php
 $user=0;

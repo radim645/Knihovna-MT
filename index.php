@@ -28,7 +28,7 @@ require_once "layout/header.php";
 
 $sql = "SELECT id, nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, pocet_kusu FROM knihy";
 
-$sqlstat = mysqli_query($con, $sql);
+$sqlstat = mysqli_query($conn, $sql);
 
 if ($sqlstat && mysqli_num_rows($sqlstat) > 0) {
     echo "<div class='knihy_container'>";
@@ -36,7 +36,7 @@ if ($sqlstat && mysqli_num_rows($sqlstat) > 0) {
         echo "<div class='knihy'>";          
         echo "<h2>" . $row['nazev'] . "</h2>";
         echo "<p>Autor: " . $row['autor'] . "</p>";
-        echo "<p>Datum vydání: " . $row['datum_vydani'] . "</p>";
+        echo "<p>Rok vydání: " . $row['datum_vydani'] . "</p>";
         echo "<p>Počet stran: " . $row['pocet_stran'] . "</p>";
         echo "<p>Nakladatelství: " . $row['nakladatelstvi'] . "</p>";
         echo "<p>Počet kusů skladem: " . $row['pocet_kusu'] . "</p>";

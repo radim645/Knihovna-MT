@@ -21,7 +21,7 @@ CREATE TABLE knihy (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nazev VARCHAR(200) NOT NULL,
     autor VARCHAR(100) NOT NULL,
-    datum_vydani DATE NOT NULL,
+    datum_vydani VARCHAR(4) NOT NULL,
     pocet_stran INT NOT NULL,
     nakladatelstvi VARCHAR(200) NOT NULL,
     pocet_kusu INT DEFAULT 5,
@@ -62,6 +62,6 @@ INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, poce
 ('Sapiens: Úchvatný i úděsný příběh lidstva', 'Yuval Noah Harari', '2011', '443', 'Harvill Secker', 5),
 ('Pýcha a předsudek', 'Jane Austen', '1813', '432', 'T. Egerton', 5);
 
-INSERT INTO uzivatele (jmeno, prijmeni, email, heslo, role)
-VALUES ('Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin');
+INSERT INTO uzivatele (uzivatelske_jmeno, jmeno, prijmeni, email, heslo, role, adresa)
+VALUES ('radim', 'Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin', 'Deblin 278');
 
