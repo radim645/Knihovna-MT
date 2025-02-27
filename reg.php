@@ -65,7 +65,6 @@ if(isset($_POST['registrace'])){
     $surname=mysqli_real_escape_string($conn,$_POST['surname']);
     $email=mysqli_real_escape_string($conn,$_POST['email']);
     $password=mysqli_real_escape_string($conn,$_POST['password']);
-    $role=mysqli_real_escape_string($conn,$_POST['role']);
     $address=mysqli_real_escape_string($conn,$_POST['address']);
 
 
@@ -77,8 +76,8 @@ if($sqlstat) {
     if($num>0) {
         $user=1;
     } else {
-        $sql="insert into `users` (username, name, surname, email, password, role, address)
-              values ('$username', '$name', '$surname', '$email', md5('$password'), '$role','$address')";
+        $sql="insert into `users` (username, name, surname, email, password, address)
+              values ('$username', '$name', '$surname', '$email', md5('$password'),'$address')";
         $sqlstat=mysqli_query($conn,$sql);
         if($sqlstat) {
             $success=1;
