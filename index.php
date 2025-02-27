@@ -52,6 +52,31 @@ if ($sqlstat && mysqli_num_rows($sqlstat) > 0) {
 ?>
 
 <?php
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["borrow_bk"])) {
+    $book_id = $_POST["id_knihy"];
+    $user_id = 1; 
+    $return_date = date("Y-m-d H:i:s", strtotime("+1 month"));
+
+    $update_sql = "UPDATE knihy SET pocet_kusu = pocet_kusu - 1 WHERE id = ? AND pocet_kusu > 0";
+    $stmt = mysqli_prepare($conn, $update_sql);
+    mysqli_stmt_bind_param($stmt, "i", $book_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    $insert_sql = "INSERT INTO vypujcky (id_knihy, id_uzivatele, datum_vraceni) VALUES (?, ?, ?)";
+    $stmt = mysqli_prepare($conn, $insert_sql);
+    mysqli_stmt_bind_param($stmt, "iis", $book_id, $user_id, $return_date);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("Location: borrow.php");
+    exit();
+}
+?>
+
+<?php
 require_once "layout/footer.php";
 ?>
 

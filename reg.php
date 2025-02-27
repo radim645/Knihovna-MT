@@ -74,7 +74,7 @@ if($sqlstat) {
     if($num>0) {
         $user=1;
     } else {
-        $sql="insert into `users` (name, surname, email, password)
+        $sql="insert into `users` (user_name, name, surname, email, password, role, address)
               values ('$name', '$surname', '$email', md5('$password'))";
         $sqlstat=mysqli_query($conn,$sql);
         if($sqlstat) {
