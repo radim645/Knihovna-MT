@@ -5,7 +5,7 @@ USE knihovna;
 
 
 CREATE TABLE IF NOT EXISTS users (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     surname VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE vypujcky (
     datum_vypujceni DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     datum_vraceni DATETIME,
     FOREIGN KEY (id_knihy) REFERENCES knihy(id),
-    FOREIGN KEY (id_uzivatele) REFERENCES uzivatele(id)
+    FOREIGN KEY (id_uzivatele) REFERENCES users(id)
 )
 ENGINE = InnoDB;
 

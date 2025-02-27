@@ -33,12 +33,12 @@ $sql = "SELECT
             v.id AS loan_id, 
             k.id AS book_id, 
             k.nazev, 
-            u.jmeno, 
+            u.name, 
             v.datum_vypujceni, 
             v.datum_vraceni 
         FROM vypujcky v
         JOIN knihy k ON v.id_knihy = k.id
-        JOIN uzivatele u ON v.id_uzivatele = u.id";
+        JOIN users u ON v.id_uzivatele = u.id";
 
 $result = mysqli_query($conn, $sql);
 ?>
@@ -54,7 +54,9 @@ $result = mysqli_query($conn, $sql);
         <th>Akce</th>
     </tr>
 
-    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+    <?php 
+    
+    while ($row = mysqli_fetch_assoc($result)): ?>
     <tr>
         <td><?= htmlspecialchars($row["nazev"]) ?></td>
         <td><?= htmlspecialchars($row["name"]) ?></td>

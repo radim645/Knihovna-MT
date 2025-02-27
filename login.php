@@ -24,11 +24,11 @@ require_once "layout/header.php";
 
 <form method="POST">
     <label for="username">Přihlašovací jméno:</label>
-    <input type="text" id="username" required>
+    <input type="text" name="username" required>
     </br>
 
     <label for="password">Heslo:</label>
-    <input type="password" id="password" required>
+    <input type="password" name="password" required>
     </br>
 
     <input type="submit" name="login" value="Přihlásit se">
