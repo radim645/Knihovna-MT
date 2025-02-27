@@ -3,11 +3,10 @@ session_start();
 
 require_once "layout/header.php";
 
-if(session_destroy())
-{
-	session_unset();
-	header("location: index.php");
-}
+session_destroy()
+
+header("location: index.php");
+
 ?>
 
 <?php
