@@ -25,11 +25,11 @@ require_once "layout/header.php";
 
 <form method="POST">
 
-    <label for="name">Jmeno:</label>
+    <label for="name">Jméno:</label>
     <input type="text" name="name"  required>
     </br>
 
-    <label for="surname">Prijmeni:</label>
+    <label for="surname">Příjmení:</label>
     <input type="text" name="surname"   required>
     </br>
 
@@ -41,7 +41,7 @@ require_once "layout/header.php";
     <input type="text" name="address"  required>
     </br>
 
-    <label for="username">Uzivatelske jmeno:</label>
+    <label for="username">Uživatelské jméno:</label>
     <input type="text" name="username"  required>
     </br>
 

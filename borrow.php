@@ -22,7 +22,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 ?>
 
-<h1>Moje vypůjčky</h1>
+<h1>Moje výpůjčky</h1>
 <table border="1">
     <tr>
         <th>Název knihy</th>
