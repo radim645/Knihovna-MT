@@ -57,7 +57,7 @@ $result = mysqli_query($conn, $sql);
     <?php while ($row = mysqli_fetch_assoc($result)): ?>
     <tr>
         <td><?= htmlspecialchars($row["nazev"]) ?></td>
-        <td><?= htmlspecialchars($row["jmeno"]) ?></td>
+        <td><?= htmlspecialchars($row["name"]) ?></td>
         <td><?= htmlspecialchars($row["datum_vypujceni"]) ?></td>
         <td><?= htmlspecialchars($row["datum_vraceni"]) ?></td>
         <td>

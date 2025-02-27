@@ -31,11 +31,11 @@ require_once "layout/header.php";
     <input type="password" id="password" required>
     </br>
 
-    <input type="submit" value="Přihlásit se">
+    <input type="submit" name="login" value="Přihlásit se">
 
     </form>
 
-<p>Nemate ucet?" " <a href="reg.php">Registrujte se zde</a></p>
+<p>Nemáte účet?<a href="reg.php">Registrujte se zde</a></p>
 
 </div>
 
@@ -50,7 +50,7 @@ if(isset($_POST['login'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']); 
     $password = md5(mysqli_real_escape_string($conn, $_POST['password'])); 
 
-    $sql="select id, name, surname, email from `users` where username='$username' and password='$password'";
+    $sql="select id, username, name, surname, email, role, address from `users` where username='$username' and password='$password'";
 
     $sqlstat=mysqli_query($conn,$sql);
     if($sqlstat) {
@@ -61,9 +61,12 @@ if(isset($_POST['login'])){
             $row = mysqli_fetch_assoc($sqlstat); 
 
             $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['username']; 
             $_SESSION['name'] = $row['name'];
             $_SESSION['surname'] = $row['surname'];
             $_SESSION['email'] = $row['email']; 
+            $_SESSION['role'] = $row['role'];
+            $_SESSION['address'] = $row['address'];  
             $_SESSION['logged_id'] = true;
 
             header('location:index.php');

@@ -49,7 +49,7 @@ require_once "layout/header.php";
     <input type="password" name="password"  required>
     </br>  
 
-    <input type="submit" value="Registrovat">
+    <input type="submit" name="registrace" value="Registrovat">
 
 </form>
 
@@ -60,13 +60,16 @@ $user=0;
 $success=0;
 
 if(isset($_POST['registrace'])){
+    $username=mysqli_real_escape_string($conn,$_POST['username']);
     $name=mysqli_real_escape_string($conn,$_POST['name']);
     $surname=mysqli_real_escape_string($conn,$_POST['surname']);
     $email=mysqli_real_escape_string($conn,$_POST['email']);
     $password=mysqli_real_escape_string($conn,$_POST['password']);
+    $role=mysqli_real_escape_string($conn,$_POST['role']);
+    $address=mysqli_real_escape_string($conn,$_POST['address']);
 
 
-$sql="select * from `users` where email='$email'";
+$sql="select * from `users` where username='$username'";
 
 $sqlstat=mysqli_query($conn,$sql);
 if($sqlstat) {
@@ -74,8 +77,8 @@ if($sqlstat) {
     if($num>0) {
         $user=1;
     } else {
-        $sql="insert into `users` (user_name, name, surname, email, password, role, address)
-              values ('$name', '$surname', '$email', md5('$password'))";
+        $sql="insert into `users` (username, name, surname, email, password, role, address)
+              values ('$username', '$name', '$surname', '$email', md5('$password'), '$role','$address')";
         $sqlstat=mysqli_query($conn,$sql);
         if($sqlstat) {
             $success=1;

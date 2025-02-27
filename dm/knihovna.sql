@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
     surname VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     address VARCHAR(255) NOT NULL,
-    user_name VARCHAR(50) UNIQUE NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
     role ENUM('customer','admin') DEFAULT 'customer' NOT NULL
 )
@@ -50,6 +50,6 @@ INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, poce
 ('Sapiens: Úchvatný i úděsný příběh lidstva', 'Yuval Noah Harari', '2011', '443', 'Harvill Secker', 5),
 ('Pýcha a předsudek', 'Jane Austen', '1813', '432', 'T. Egerton', 5);
 
-INSERT INTO users (user_name, name, surname, email, password, role, address)
+INSERT INTO users (username, name, surname, email, password, role, address)
 VALUES ('radim', 'Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin', 'Deblin 278');
 
