@@ -1,7 +1,7 @@
 <?php
 require_once "layout/header.php";
 require "db.php";
-session_start();
+
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["return_book"])) {

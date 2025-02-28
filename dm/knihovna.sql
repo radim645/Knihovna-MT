@@ -51,5 +51,5 @@ INSERT INTO knihy (nazev, autor, datum_vydani, pocet_stran, nakladatelstvi, poce
 ('Pýcha a předsudek', 'Jane Austen', '1813', '432', 'T. Egerton', 5);
 
 INSERT INTO users (username, name, surname, email, password, role, address)
-VALUES ('radim', 'Radim', 'Micanek', 'micanekradim@seznam.cz', '12345', 'admin', 'Deblin 278');
+VALUES ('micanek', 'Radim', 'Micanek', 'radim@radim.cz', md5('12345'), 'admin', 'Deblin');
 

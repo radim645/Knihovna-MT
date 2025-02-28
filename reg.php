@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'db.php';
 ?>
 
@@ -89,10 +89,19 @@ if($sqlstat) {
 }
 }
 
+?>
+
+<?php
+
+if($user){
+    echo '<script>alert("Tento email už je zaregistrován")</script>';
+}
+
 
 if($success){
-    echo '<script>alert(Účet úspěšně vytvořen)</script>';
+    echo '<script>alert("Účet byl vytvořen")</script>';
 }
+   
 
 ?>
 

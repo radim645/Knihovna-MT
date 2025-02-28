@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prihlaseni</title>
+    <title>Přihlášení</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,7 +12,6 @@
 require_once "layout/header.php";
 ?>
 <?php
-session_start();
 require 'db.php';
 ?>
 
@@ -65,7 +64,7 @@ if(isset($_POST['login'])){
             $_SESSION['email'] = $row['email']; 
             $_SESSION['role'] = $row['role'];
             $_SESSION['address'] = $row['address'];  
-            $_SESSION['logged_id'] = true;
+            $_SESSION['logged_in'] = true;
 
             header('location:index.php');
 
@@ -79,11 +78,15 @@ if(isset($_POST['login'])){
 
 <?php
 
+
+
 if($invalid){
-    echo '<script>alert("Špatně zadané heslo nebo přihlašovací jméno")</script>';
+    echo '<script>alert("Špatné heslo nebo přihlašovací jméno")</script>';
 }
 
+
 ?>
+
 
 
 <?php

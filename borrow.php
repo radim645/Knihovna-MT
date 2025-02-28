@@ -3,7 +3,7 @@ require_once "layout/header.php";
 ?>
 
 <?php
-session_start();
+
 require 'db.php';
 ?>
 
