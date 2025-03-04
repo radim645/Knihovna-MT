@@ -35,6 +35,9 @@ $result = mysqli_stmt_get_result($stmt);
     <?php endwhile; ?>
 </table>
 
+<div style="margin-top: 20px; padding: 15px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 5px;">
+    <strong>Upozornění:</strong> Knihu si vyzvedněte na nejbližší pobočce knihovny a vraťte ji nejpozději do data uvedeného v <em>Termínu vrácení</em>.
+</div>
 
 <?php
 require_once "layout/footer.php";
